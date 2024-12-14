@@ -18,6 +18,10 @@ classDiagram
     class Signario {
         +String nombre
     }
+    class Soporte {
+        +String nombre
+    }
     Inscripción "1" -- "*" FotoInscripción
-    Inscripción "*" -- "*" Signario
+    Inscripción "*" -- "1" Signario
+    Inscripción "*" -- "1" Soporte
 ```
