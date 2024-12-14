@@ -9,5 +9,6 @@ urlpatterns = [
     path('writingscripts/',views.get_writingscripts),
     path('writingscripts/<int:pk>',views.get_writingscript),
     path('photos/',views.get_photos),
-    path('photos/<int:pk>',views.get_photo)
+    path('photos/<int:pk>',views.get_photo),
+    path('photos/view/<int:pk>',views.get_view_photo)
 ]

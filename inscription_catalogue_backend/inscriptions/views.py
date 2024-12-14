@@ -56,6 +56,17 @@ def get_photo(request,pk):
     if request.method == 'GET':
         return _get_one_by_pk(InscriptionPhoto,InscriptionPhotoSerializer,request,pk)
 
+@csrf_exempt
+def get_view_photo(request,pk):
+    photo = InscriptionPhoto.objects.filter(pk=pk)
+    if photo:
+        photo = photo[0]
+    return render(request=request,template_name='index.html',context={'item':photo})
+
+'''
+AUXILIAR CODE
+'''
+
 def _get_one_by_pk(model,serializer,request,pk):
     try:
         result = model.objects.get(pk=pk)

@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
 class Medium(models.Model):
@@ -49,7 +50,7 @@ class Inscription(models.Model):
         return self.refHesperia
 
 class InscriptionPhoto(models.Model):
-    image = models.ImageField(verbose_name='imagen',upload_to='assets/img/')
+    image = models.ImageField(verbose_name='imagen',upload_to=f'{settings.MEDIA_ROOT}/img/')
     inscription = models.ForeignKey(Inscription,models.CASCADE,verbose_name='inscripción')
 
     def __str__(self):
